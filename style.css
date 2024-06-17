@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root{
+--Soft-blue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+--Very-dark-blue-bg: hsl(217, 54%, 11%);
+--Very-dark-blue-card: hsl(216, 50%, 16%);
+--Very-dark-blue-line: hsl(215, 32%, 27%);
+--White: hsl(0, 0%, 100%);
+}
+
+*{
+    font-family: "Outfit";
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: var(--Very-dark-blue-bg);
+    margin: 0;
+}
+
+.card{
+    background-color: var(--Very-dark-blue-card);
+    width: min(350px,90%);
+    padding: 1.5rem 1.5rem 2rem;
+    border-radius: 1rem;
+}
+
+.card__img-container{
+    position: relative;
+}
+
+.card__filter{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--Cyan);
+    opacity: 0;
+    border-radius: 1rem;
+    transition: 0.2s;
+}
+
+.card__view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.card__img-container:hover{
+    cursor: pointer;
+}
+
+.card__img-container:hover .card__filter{
+    opacity: 50%;
+}
+
+.card__img-container:hover .card__view{
+    opacity: 100%;
+}
+
+.card__img{
+    display: flex;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card__img:hover{
+    cursor: pointer;
+    background-image: url('images/icon-view.svg');
+}
+
+.card__header{
+    color: var(--White);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: 0.2s;
+}
+
+.card__header:hover{
+    cursor: pointer;
+    color: var(--Cyan);
+}
+
+.card__paragraph{
+    color: var(--Soft-blue);
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.card__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.card__price{
+    color: var(--Cyan);
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card__icon{
+    margin-right: 0.5rem;
+    height: 1.125rem;
+}
+
+.card__duration{
+    color: var(--Soft-blue);
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+hr{
+    border: none;
+    height: 1.9px;
+    background-color: var(--Very-dark-blue-line);
+    margin-bottom: 1rem;
+}
+
+.card__footer{
+    display: flex;
+    align-items: center;
+    color: var(--Soft-blue);
+    font-size: 1rem;
+}
+
+.card__avatar{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: solid 1px white;
+    margin-right: 1rem;
+}
+
+.card__footer a{
+    color: var(--White);
+    margin-left: 0.2rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.card__footer a:hover{
+    cursor: pointer;
+    color: var(--Cyan);
+}
+
